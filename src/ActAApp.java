@@ -1,6 +1,6 @@
 /**
  * 
- * Miquel Angel Montero Act1 13/01/2022 
+ * Miquel Angel Montero ActA 14/01/2022 
  * 
  */
 import java.util.Hashtable;
@@ -73,6 +73,7 @@ public class ActAApp {
 		
 		System.out.println("Nombre / Nota media");
 		
+		//Assignamos la key(String nombre) a i, seguidamente hacemos un get de i para obtener el valor de la clave.
 		for (String i : tabla.keySet()) {
 			System.out.println(i+" / "+tabla.get(i));
 		}

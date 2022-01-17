@@ -10,8 +10,8 @@ public class ActBApp {
 	public static void main(String[] args) {
 		
 		//Variables aux
-		int cont=0, iva = 0;
-		double precioT = 0, cantidadPagada = 0, precioTProd = 0, precioTProdIva = 0, precioTIva = 0;
+		int cont=0;
+		double precioT = 0, cantidadPagada = 0, precioTProd = 0, precioTProdIva = 0, precioTIva = 0, iva = 0;
 		
 		//Definír diccionario de productos
 		Hashtable<String, Double> tabla = new Hashtable<String, Double>();
@@ -45,9 +45,9 @@ public class ActBApp {
 			
 			String ivaOp = JOptionPane.showInputDialog("Indica que IVA se le aplica al producto:\n1.21%\n2.4%");
 			if(ivaOp.equals("1")) {
-				iva=21;
+				iva=0.21;
 			}else if(ivaOp.equals("2")) {
-				iva=4;
+				iva=0.4;
 			}else {
 				iva=21;
 				JOptionPane.showMessageDialog(null, "La opcion no es correcta, por defecto se aplicará el 21%");
@@ -92,9 +92,9 @@ public class ActBApp {
 	}
 	
 	//Calcula el precio con iva iva total de cada tipo de producto
-	public static double calcularPrecioProdIva(double precioP, int iva) {
+	public static double calcularPrecioProdIva(double precioP, double iva) {
 		
-		double resultado = precioP+(precioP/iva);
+		double resultado = precioP+(precioP*iva);
 		resultado = Math.round(resultado*100.0)/100.0;
 		return resultado;
 		
